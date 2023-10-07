@@ -6,13 +6,35 @@ function calculateSum() {
   }
   document.getElementById("oneResult").textContent = sum;
   return sum;
-};
+}
 
-function printEvenNumbers(n) { 
-    let i = 2;
-     while (i <= n) { console.log(i); i += 2;}
+function printEvenNumbers() {
+    
+    const inputElement = document.getElementById("numberInput");
+    const n = parseInt(inputElement.value);
+
+    if (isNaN(n)) {
+      alert("Please enter a valid number.");
+      return;
+    }
+
+  console.log("Even numbers up to 10:");
+  printEvenNumbers(10);
+  console.log("Even numbers up to 20:");
+  const evenNumbers = [];
+
      
-    console.log("Even numbers up to 10:"); printEvenNumbers(10);
-    console.log("Even numbers up to 20:");
-};
-   
+      for (let i = 2; i <= n; i += 2) {
+        evenNumbers.push(i);
+      }
+
+      
+      const resultElement = document.getElementById("result");
+      resultElement.textContent = "Even numbers: " + evenNumbers.join(", ");
+    }
+  
+
+
+
+
+
